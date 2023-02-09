@@ -10,33 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
       TabView {
-          VStack{
-              Text("초급")
-              Image(systemName: "square.fill")
-                  .resizable()
-                  .frame(width: 300,height: 300)
-              Text("중급")
-              Image(systemName: "square.fill")
-                  .resizable()
-                  .frame(width: 300,height: 300)
-          }
+          DrawingView()
           .tabItem {
             Image(systemName: "q.circle.fill")
             Text("퀴즈")
-          }
-          VStack{
-              Text("초급")
-              Image(systemName: "square.fill")
-                  .resizable()
-                  .frame(width: 300,height: 300)
-              Text("중급")
-              Image(systemName: "square.fill")
-                  .resizable()
-                  .frame(width: 300,height: 300)
-          }
-          .tabItem {
-            Image(systemName: "gamecontroller")
-            Text("게임")
           }
           history()
           .tabItem {

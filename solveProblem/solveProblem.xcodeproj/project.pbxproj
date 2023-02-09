@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A15F12CD29938CE000344740 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F12CC29938CE000344740 /* DrawingView.swift */; };
 		A1C14983298E1BEA00E793BC /* scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C14982298E1BEA00E793BC /* scroll.swift */; };
 		A1C78A24298D1DDC00955AC0 /* history.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C78A23298D1DDC00955AC0 /* history.swift */; };
 		A1C78A26298D1E5400955AC0 /* playView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C78A25298D1E5400955AC0 /* playView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A15F12CC29938CE000344740 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		A1C14982298E1BEA00E793BC /* scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scroll.swift; sourceTree = "<group>"; };
 		A1C78A23298D1DDC00955AC0 /* history.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = history.swift; sourceTree = "<group>"; };
 		A1C78A25298D1E5400955AC0 /* playView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				A1C78A23298D1DDC00955AC0 /* history.swift */,
 				A1C78A25298D1E5400955AC0 /* playView.swift */,
 				A1C14982298E1BEA00E793BC /* scroll.swift */,
+				A15F12CC29938CE000344740 /* DrawingView.swift */,
 				A1CA7CBF298A978500522915 /* Assets.xcassets */,
 				A1CA7CC1298A978500522915 /* Preview Content */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15F12CD29938CE000344740 /* DrawingView.swift in Sources */,
 				A1C14983298E1BEA00E793BC /* scroll.swift in Sources */,
 				A1CA7CBE298A978400522915 /* ContentView.swift in Sources */,
 				A1CA7CBC298A978400522915 /* solveProblemApp.swift in Sources */,
