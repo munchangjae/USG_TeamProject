@@ -13,8 +13,10 @@ struct ColorPickerView: View {
     
     let colors = [Color.red, Color.orange, Color.green, Color.blue, Color.purple]
     @Binding var selectedColor: Color
-    let Thickness:[Double] = [10.0, 15.0, 20, 25, 30, 35, 40]
+    let Thickness:[Double] = [1,2,3,4]
     @Binding var selcetedThickness:Double
+    let thickCircle:[String] = [Constants.Icons.circle_1, Constants.Icons.circle_2, Constants.Icons.circle_3, Constants.Icons.circle_4]
+    
     
     var body: some View {
         VStack{
@@ -36,7 +38,7 @@ struct ColorPickerView: View {
             HStack{
                 ForEach(Thickness, id: \.self) { Thicks in
                     Image(systemName: selcetedThickness == Thicks ? Constants.Icons.recordCircleFill : Constants.Icons.circleFill)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.black)
                         .onTapGesture {
                             selcetedThickness = Thicks
                         }
