@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var currentLine = Line()
     @State private var lines: [Line] = []
     @State private var thickness: Double = 1.0
-    
+    //let clearView:Double = 100
     var body: some View {
         VStack{
             Canvas { context, size in
@@ -25,29 +25,43 @@ struct ContentView: View {
                     var path = Path()
                     path.addLines(line.points)
                     context.stroke(path, with: .color(line.color), lineWidth: line.lineWidth)
-                    
+                    // addLines말고 addRoundRect 사용하고 싶음 -> 끝이 둥근 선분
                 }
+                
             }.frame(minWidth: 400, minHeight: 400)
                 .border(Color.blue)
             .gesture(DragGesture(minimumDistance/*설정거리 이상 움직여야 작동*/: 0, coordinateSpace: .local).onChanged({ value in
                 let newPoint = value.location
                 currentLine.points.append(newPoint)
                 self.lines.append(currentLine)
-                print(currentLine)
+                //print(currentLine)
             }).onEnded({ value in
                 self.lines.append(currentLine)
-                self.currentLine = Line(points: [],color: currentLine.color, lineWidth: thickness )// 커서를 떼는 시점에서 포인트를 다시 지움
+                self.currentLine = Line(points: [],color: currentLine.color, lineWidth: currentLine.lineWidth )// 커서를 떼는 시점에서 포인트를 다시 지움
                 // 이 문장이 없으면 커서를 뗄 때 마지막 포인트가 어레이에 남아있고 다시 그림을 그리려 커서를 올리면 마지막 지점 - 커서 올린 지점 패스에 라인이 생성됨.
-                print(currentLine , "ended")
+                //print(currentLine , "ended")
             })
             
             )
-            Image(systemName: "pencil")// 지우개
-                .onTapGesture {
-                    currentLine.color = .white
-                    currentLine.lineWidth = 40
-                    print(currentLine)
+            HStack{
+                Image(systemName: "trash")// 지우개
+                    .onTapGesture {
+                        
+                        self.currentLine.lineWidth = 10000000
+                        self.currentLine.color = .white
+                    }
+                Image(systemName: "pencil")
+                    .onTapGesture {
+                        self.currentLine = Line(points: [], color: .red, lineWidth: 1.0)
+                        //print(currentLine)
+                    }
+                ColorPickerView(selectedColor: $currentLine.color, selcetedThickness: $currentLine.lineWidth)
+                    .onChange(of: currentLine.color) { newColor in
+                        //print(newColor)
+                        currentLine.color = newColor
                 }
+            }
+            
         }
             
         

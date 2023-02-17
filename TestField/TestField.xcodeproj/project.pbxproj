@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1406362299F6556003192D7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1406361299F6556003192D7 /* Constants.swift */; };
+		A1406364299F6594003192D7 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1406363299F6594003192D7 /* ColorPickerView.swift */; };
 		A15F12DB2994EF5800344740 /* TestFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F12DA2994EF5800344740 /* TestFieldApp.swift */; };
 		A15F12DD2994EF5800344740 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F12DC2994EF5800344740 /* ContentView.swift */; };
 		A15F12DF2994EF5900344740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15F12DE2994EF5900344740 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1406361299F6556003192D7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1406363299F6594003192D7 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		A15F12D72994EF5800344740 /* TestField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15F12DA2994EF5800344740 /* TestFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFieldApp.swift; sourceTree = "<group>"; };
 		A15F12DC2994EF5800344740 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,8 +56,10 @@
 		A15F12D92994EF5800344740 /* TestField */ = {
 			isa = PBXGroup;
 			children = (
+				A1406361299F6556003192D7 /* Constants.swift */,
 				A15F12DA2994EF5800344740 /* TestFieldApp.swift */,
 				A15F12DC2994EF5800344740 /* ContentView.swift */,
+				A1406363299F6594003192D7 /* ColorPickerView.swift */,
 				A1D91BD8299688810060E349 /* memo.md */,
 				A15F12DE2994EF5900344740 /* Assets.xcassets */,
 				A15F12E02994EF5900344740 /* Preview Content */,
@@ -141,6 +147,8 @@
 			files = (
 				A15F12DD2994EF5800344740 /* ContentView.swift in Sources */,
 				A15F12DB2994EF5800344740 /* TestFieldApp.swift in Sources */,
+				A1406362299F6556003192D7 /* Constants.swift in Sources */,
+				A1406364299F6594003192D7 /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
