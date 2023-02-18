@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var lines: [Line] = []
     @State private var thickness: Double = 1.0
     @State var isImageOn:Bool = true
-    @State var clearView:Bool = false
+    
     var body: some View {
         VStack{
             ZStack{
@@ -60,7 +60,7 @@ struct ContentView: View {
             }
             
             HStack{
-                Image(systemName: "trash")// 지우개
+                Image(systemName: "trash")// 전체 지우개
                     .onTapGesture {
                         lines = []
                     }
@@ -75,7 +75,8 @@ struct ContentView: View {
                         currentLine.color = newColor
                 }
                 Toggle("  미리보기", isOn: $isImageOn).frame(width: 140)
-                Image(systemName: "trash")// 지우개
+                
+                Image(systemName: "trash")// undo 지우개
                     .onTapGesture {
                         lines.removeLast() // lines가 비어었을 때 undo 누를 시 크래쉬
                     }
