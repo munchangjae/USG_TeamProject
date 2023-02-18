@@ -17,15 +17,18 @@ struct ContentView: View {
     @State private var lines: [Line] = []
     @State private var thickness: Double = 1.0
     @State var isImageOn:Bool = true
-    //let clearView:Double = 100
+    @State var clearView:Bool = false
     var body: some View {
         VStack{
             ZStack{
                 if isImageOn == true{
-                    Image("yellow.car").opacity(0.2)
-                        .frame(minWidth: 400, minHeight: 400)
+                    Image("rabbit")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .opacity(0.2)
+                    
                 }
-                
+                 
                 Canvas { context, size in
                 
                     for line in lines {
@@ -35,7 +38,8 @@ struct ContentView: View {
                         // addLines말고 addRoundRect 사용하고 싶음 -> 끝이 둥근 선분
                     }
                     
-                }.frame(minWidth: 400, minHeight: 400)
+                }
+                .frame(minWidth: 400, minHeight: 400)
                 
                     .border(Color.blue)
                 .gesture(DragGesture(minimumDistance/*설정거리 이상 움직여야 작동*/: 0, coordinateSpace: .local).onChanged({ value in
@@ -58,9 +62,7 @@ struct ContentView: View {
             HStack{
                 Image(systemName: "trash")// 지우개
                     .onTapGesture {
-                        
-                        self.currentLine.lineWidth = 10000000
-                        self.currentLine.color = .white
+                        lines = []
                     }
                 Image(systemName: "pencil")
                     .onTapGesture {
@@ -73,6 +75,10 @@ struct ContentView: View {
                         currentLine.color = newColor
                 }
                 Toggle("  미리보기", isOn: $isImageOn).frame(width: 140)
+                Image(systemName: "trash")// 지우개
+                    .onTapGesture {
+                        lines.removeLast() // lines가 비어었을 때 undo 누를 시 크래쉬
+                    }
                 
             }
             
